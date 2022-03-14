@@ -2,7 +2,7 @@
 <html>
 <head>
 <style>
-.error {color: #FF0000;}
+.error {color: red;}
 
 *,
         *:before,
@@ -19,12 +19,12 @@
         }
         
          ::-webkit-scrollbar-thumb {
-            background: linear-gradient(13deg, #f9d4ff 14%, #c7ceff 64%);
+            background: linear-gradient(13deg, #820263 14%, #820263 64%);
             border-radius: 10px;
         }
         
          ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(13deg, #c7ceff 14%, #f9d4ff 64%);
+            background: linear-gradient(13deg, #820263 14%, #820263 64%);
         }
         
          ::-webkit-scrollbar-track {
@@ -36,7 +36,7 @@
         
         h1 {
             font-size: 36px;
-            background: -webkit-linear-gradient(13deg, #c7ceff 14%, #78f5ea 62%);
+            background: -webkit-linear-gradient(13deg, #820263 14%, #820263 62%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -46,23 +46,41 @@
             font-family: 'Nunito', sans-serif;
             color: #384047;
         }
-        /* This code changes the appearance of the form */
-        
-        form {
-            max-width: 300px;
-            margin: 10px auto;
-            padding: 10px 20px;
-            background: #f4f7f8;
-            border-radius: 8px;
+
+        button {
+            padding: 19px 39px 18px 39px;
+            color: #FFF;
+            font-size: 18px;
+            text-align: center;
+            font-style: normal;
+            border-radius: 5px;
+            width: 100%;
+             
         }
+        button, input[type="submit"]{
+          background: #820263;
+          color: white;
+          border-style: outset;
+          border-color: #820263;
+          height: 35px;
+          width: 70px;
+          font: bold 14px arial,sans-serif;
+          text-shadow:#384047 ;
+          margin-bottom: 10px;
+          border-width: 1px 1px 3px;
+          text-align: center;
+        }
+
         /* This code changes the appearance of h1 */
         
         h1 {
             margin: 0 0 30px 0;
             text-align: center;
         }
+        p {
+          text-align: center;
+        }
         /* This code changes the appearance / placment of the area where everything is displayed */
-        
         textarea,
         select {
             background: rgba(255, 255, 255, 0.1);
@@ -92,20 +110,7 @@
         }
         /* This code changes the appearance of the button command */
         
-        button {
-            padding: 19px 39px 18px 39px;
-            color: #FFF;
-            background-color: #78f5ea;
-            font-size: 18px;
-            text-align: center;
-            font-style: normal;
-            border-radius: 5px;
-            width: 100%;
-            border: 1px solid #78f5ea;
-            border-width: 1px 1px 3px;
-            box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
-            margin-bottom: 10px;
-        }
+        
         /* This code changes the appearance of the fieldset command */
         
         fieldset {
@@ -148,9 +153,14 @@
         /* This code changes the placment of the application on screen */
         
         @media screen and (min-width: 480px) {
-            form {
-                max-width: 480px;
-            }
+
+          /* This code changes the appearance of the form */
+          form {
+            max-width: 500px;
+            margin: 0px auto;
+            padding: 10px 20px;
+            background: #f4f7f8;
+        }
         }
 </style>
 </head>
@@ -176,7 +186,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $emailErr = "Email is required";
   } else {
     $email = test_input($_POST["email"]);
-    // check if e-mail address is well-formed
+    // check if e-pmail address is well-formed
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $emailErr = "Invalid email format";
     }
@@ -213,18 +223,18 @@ function test_input($data) {
 }
 ?>
 
-<h1>PHP Form Validation Example</h1>
+<h1>PHP Form Example</h1>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-  Name: <input type="text" name="name">
+  <p1 class="fr">Name: </p> <input type="text" name="name">
   <span class="error">* <?php echo $nameErr;?></span>
   <br><br>
-  E-mail: <input type="text" name="email">
+  <p1 class="fr">E-mail: </p> <input type="text" name="email">
   <span class="error">* <?php echo $emailErr;?></span>
   <br><br>
-  Website: <input type="text" name="website">
+  <p1 class="fr">Website: </p> <input type="text" name="website">
   <span class="error"><?php echo $websiteErr;?></span>
   <br><br>
-  Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+  <p1 class="fr">Comment: </p> <textarea name="comment" rows="5" cols="40"></textarea>
   <br><br>
   Gender:
   <input type="radio" name="gender" value="female">Female
@@ -235,18 +245,20 @@ function test_input($data) {
   <input type="submit" name="submit" value="Submit">  
 </form>
 
-<?php
+<form method="POST" action="">
+<?php 
 echo "<h1>Your Input:</h1>";
-echo "<p> $name </p>";
+echo "<p> Name: $name </p>";
 echo "<br>";
-echo $email;
+echo "<p> E-mail: $email </p>";
 echo "<br>";
-echo $website;
+echo "<p> Website: $website </p>";
 echo "<br>";
-echo $comment;
+echo "<p> Comment: $comment </p>";
 echo "<br>";
-echo $gender;
+echo "<p> Gender: $gender </p>";
 ?>
+</form>
 
 </body>
 </html>

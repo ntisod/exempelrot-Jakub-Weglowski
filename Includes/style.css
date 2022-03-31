@@ -4,27 +4,35 @@
   }
   body {
     font-size: 120%;
-    background: #F8F8FF;
+    background: #000000;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-image: url('https://i.ibb.co/fvN9ddB/asd.jpg');
   }
   
+.center {
+  margin-left: 35%;
+}
   .header {
-    width: 30%;
+    width: 70%;
     margin: 50px auto 0px;
     color: white;
-    background: #5F9EA0;
+    background: #e9c19c;
     text-align: center;
-    border: 1px solid #B0C4DE;
+    border: 1px solid #000000;
     border-bottom: none;
     border-radius: 10px 10px 0px 0px;
     padding: 20px;
   }
   form, .content {
-    width: 30%;
+    width: 35%;
     margin: 0px auto;
     padding: 20px;
-    border: 1px solid #B0C4DE;
-    background: white;
+    border: 1px solid #000000;
+    background: #e9c19c;
     border-radius: 0px 0px 10px 10px;
+    opacity: 0.1;
+    
   }
   .input-group {
     margin: 10px 0px 10px 0px;
@@ -49,9 +57,7 @@
     height: 14px;
    }
    
-   
-
-  .btn {
+  button {
     padding: 10px;
     font-size: 15px;
     color: white;

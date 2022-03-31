@@ -1,11 +1,8 @@
 <html>
 
 <head>
-<style>
-    input[type="password"] {
-        background-color: #000000;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 <?php
 define('BASEPATH', true);
@@ -63,20 +60,36 @@ require('../Pform/db.php');
 
 <form action="register.php" method="post">
 <div class="img-box">
-<img src="https://i.ibb.co/MVLXwKS/imgonline-com-ua-Replace-Color-z-Jjn-Z4ki4x-Y1-removebg-preview.png" alt="Avatar" style="width:200px">
+<img src="https://i.ibb.co/SKSn7Tj/heracles.png" alt="Avatar" style="width:200px" class="center">
 </div>
-<br>
-  <input type="text" required="required" name="username" placeholder="Username">
-  <br>
-  <input required="required" type="email" name="email" placeholder="Email">
-  <br>
-  <input type="checkbox" onclick="ShowPasswordFunction()"><p1>Show password</p1>
-  <input required="required" type="password" name="password" placeholder="Password" id="ShowPassword">   
-  <br> <br>               
-  <button name="submit" type="submit">Register</button>
-  </form>
-  
-  <script>
+<div class="header">
+  	<div class="input-group">
+  	  <label>Username</label>
+  	  <input type="text" name="username">
+  	</div>
+  	<div class="input-group">
+  	  <label>Email</label>
+  	  <input type="email" name="email">
+  	</div>
+  	<div class="input-group">
+  	  <label>Password</label>
+  	  <input type="password" name="password_1" id="PassShow">
+  	</div>
+    <input type="checkbox" onclick="ShowPassFunktion()"><p1> Show password</p1>
+  	<div class="input-group">
+  	  <label>Confirm password</label>
+  	  <input type="password" name="password_2">
+  	</div>
+  	<div class="input-group">
+  	  <button type="submit" class="btn" name="reg_user">Register</button>
+  	</div>
+  	<p>
+  		Already a member? <a href="login.php">Sign in</a>
+  	</p>
+</div>
+</form>
+</div>
+<script>
 function ShowPasswordFunction() {
   var x = document.getElementById("ShowPassword");
   if (x.type === "password") {

@@ -22,8 +22,9 @@
   	</div>
   	<div class="input-group">
   	  <label>Password</label>
-  	  <input type="password" name="password_1">
+  	  <input type="password" name="password_1" id="PassShow">
   	</div>
+    <input type="checkbox" onclick="ShowPassFunktion()"><p1> Show password</p1>
   	<div class="input-group">
   	  <label>Confirm password</label>
   	  <input type="password" name="password_2">
@@ -36,4 +37,16 @@
   	</p>
   </form>
 </body>
+
+<script>
+function ShowPassFunktion() {
+  var x = document.getElementById("PassShow");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+
 </html>

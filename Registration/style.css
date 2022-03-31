@@ -42,6 +42,15 @@
     border-radius: 5px;
     border: 1px solid gray;
   }
+
+   input[type="checkbox"]
+   {
+    width: 14px;
+    height: 14px;
+   }
+   
+   
+
   .btn {
     padding: 10px;
     font-size: 15px;

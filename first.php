@@ -27,4 +27,3 @@ echo "<p>Namnet $namn innehaller ", strlen($namn), " tecken.<p>";
 
 </body>
 </html>
-© 2022 GitHub,

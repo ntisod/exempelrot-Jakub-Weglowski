@@ -31,7 +31,7 @@ if(isset($_POST['submit'])){
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
         
     //If $row is false statement.
-    if($user === false){
+    if($user == false){
        echo '<script>alert("invalid username")</script>';
     } else{
          

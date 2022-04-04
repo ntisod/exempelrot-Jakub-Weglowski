@@ -73,9 +73,9 @@ require('../Pform/db.php');
   	</div>
   	<div class="input-group">
   	  <label>Password</label>
-  	  <input type="password" name="password" id="ShowPass">
+  	  <input type="password" name="password" id="ShowPassword">
   	</div>
-    <input type="checkbox" onclick="ShowPassFunktion()"><p1> Show password</p1>
+    <input type="checkbox" onclick="ShowPasswordFunction()"><p1> Show password</p1>
   	<div class="input-group">
   	  <label>Confirm password</label>
   	  <input type="password" name="password">

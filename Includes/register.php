@@ -44,7 +44,7 @@ require('../Pform/db.php');
 
    if($stmt->execute()){
     echo '<script>alert("New account created.")</script>';
-    //redirect to another page
+    header('location: login.php');
     echo '<script>window.location.replace("index.php")</script>';
      
    }else{
@@ -65,7 +65,7 @@ require('../Pform/db.php');
 <div class="header">
   	<div class="input-group">
   	  <label>Username</label>
-  	  <input type="text" name="username">
+  	  <input type="username" name="username">
   	</div>
   	<div class="input-group">
   	  <label>Email</label>
@@ -73,15 +73,15 @@ require('../Pform/db.php');
   	</div>
   	<div class="input-group">
   	  <label>Password</label>
-  	  <input type="password" name="password_1" id="PassShow">
+  	  <input type="password" name="password" id="ShowPass">
   	</div>
     <input type="checkbox" onclick="ShowPassFunktion()"><p1> Show password</p1>
   	<div class="input-group">
   	  <label>Confirm password</label>
-  	  <input type="password" name="password_2">
+  	  <input type="password" name="password">
   	</div>
   	<div class="input-group">
-  	  <button type="submit" class="btn" name="reg_user">Register</button>
+  	  <button type="submit" class="btn" name="submit">Register</button>
   	</div>
   	<p>
   		Already a member? <a href="login.php">Sign in</a>

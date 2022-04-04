@@ -1,4 +1,9 @@
 <html>
+    
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
 <?php
 define('BASEPATH', true); //access connection script if you omit this line file will be blank
 require('../Pform/db.php'); //require connection script
@@ -50,27 +55,42 @@ if(isset($_POST['submit'])){
     }
 ?>
 
-<form action="login.php" method="post">
+<body>
+<form action="login.php" method="post">  
 <div class="img-box">
-<img src="https://i.ibb.co/k4mGz9g/Dark-Cyan-Pic-removebg-preview.png" alt="Avatar" style="width:200px">
+<img src="https://i.ibb.co/SKSn7Tj/heracles.png" alt="Avatar" style="width:200px" class="center">
 </div>
-<form action="login.php" method="post">                          
- <input type="text" name="username" placeholder="Username">
- <br>
- <input type="checkbox" onclick="ShowPasswordFunction()"><p1>Show password</p1>
- <input type="password" name="password" placeholder="Password" id="ShowPassword">   
- <br><br> 
- <button name="submit" type="submit">sign in</button>
- </form>
+<div class="header">
+    <div class="input-group">
+        <label>Username</label>
+        <input type="username" name="username" placeholder="Username">
+    </div>
+
+    <div class="input-group">
+  		<label>Password</label>
+        <input type="password" name="password" placeholder="Password" id="ShowPassword">   
+  	</div>
+      <input type="checkbox" onclick="ShowPasswordFunction()"><p1>Show password</p1>
+  	<div class="input-group">
+      <button name="submit" type="submit">Login</button>
+  	</div>
+  	<p>
+  		Not yet a member? <a href="register.php">Sign up</a>
+  	</p>
+</div>
+  </form>
 
  <script>
 function ShowPasswordFunction() {
   var x = document.getElementById("ShowPassword");
   if (x.type === "password") {
     x.type = "text";
-  } else {
+  } 
+  else {
     x.type = "password";
   }
 }
 </script>
+
+</body>
  </html>

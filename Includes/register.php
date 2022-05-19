@@ -6,7 +6,7 @@
 </head>
 <?php
 define('BASEPATH', true);
-require('Pform/db.php'); 
+require('../Pform/db.php'); 
 
  if(isset($_POST['submit'])){  
         try {

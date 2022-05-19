@@ -1,14 +1,9 @@
 <html>
-
 <head>
 <link rel="stylesheet" type="text/css" href="style.css">
 
-
 </head>
-<body>
-
 <?php 
-
   session_start();
 
   if (!isset($_SESSION['luser'])) {
@@ -29,7 +24,6 @@
       }
       else { //Starting this else one [else1]
 ?>
-</body>
 </html>
           <!-- From here all HTML coding can be done -->
           <html>

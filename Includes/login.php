@@ -11,7 +11,7 @@ session_start();
 </head>
 <?php
 define('BASEPATH', true); //access connection script if you omit this line file will be blank
-require('Pform/db.php'); //require connection script
+require('../Pform/db.php'); //require connection script
 $MIN = 60;
 $HOUR = 3600;
 $DAY = 86400;

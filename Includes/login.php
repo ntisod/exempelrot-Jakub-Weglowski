@@ -40,13 +40,28 @@ if(isset($_POST['submit'])){
         
         //If validPassword is true.
         if($validPassword){
-            
+
             //Re-directs user.
-             
+
             $_SESSION['admin'] = $username;
-           echo '<script>window.location.replace("http://localhost:8080/phpmyadmin/index.php?route=/sql&server=1&db=vsp1ex&table=admin&pos=0");</script>';
+           //Removed something here temporaraly (Do not tinker with this u stupid elias, u will ruin it.)
+
+           $v1 = $_POST['username'];
+           $v2 = $_POST['password'];
+           $v3 = $_POST['username'];
+           $v4 = $_POST['password'];
+           if ($v1 == $v3 && $v2 == $v4) {
+               $_SESSION['luser'] = $v1;
+               $_SESSION['start'] = time(); // Taking now logged in time.
+               // Ending a session in 1 minutes from the starting time.
+               $_SESSION['expire'] = $_SESSION['start'] + (1 * 60);
+               echo '<script>window.location.replace("index.php");</script>';
+           } else {
+               echo "Please enter the username or password again!";
+           }
+
             exit;
-            
+
         } else{
             //If password false, then print this message..
             echo '<script>alert("invalid password")</script>';

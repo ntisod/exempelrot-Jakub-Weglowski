@@ -22,13 +22,16 @@
 ?>
           <!-- From here all HTML coding can be done -->
           <html>
+            <head>
+              <link rel="stylesheet" type="text/css" href="style.css">
+            </head>
               Welcome
               <?php
-                  echo $_SESSION['luser'];
-                  echo "<br>";
-                  echo "<a href='logout.php'> Log out </a>";
+                    echo $_SESSION['luser'];
+                    echo "<br>";
+                    echo "<a href='logout.php'> Log out </a>";
               ?>
-          </html>
+        </html>
 <?php
       }
   }

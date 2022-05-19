@@ -1,9 +1,18 @@
+<html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+</head>
+<body>
+
 <?php 
 
   session_start();
 
   if (!isset($_SESSION['luser'])) {
-      echo "Please Login again";
+      echo "Please Login";
       echo "<br>";
       echo "<a href='login.php'> Click Here to Login </a>";
       echo "<br>";
@@ -20,6 +29,8 @@
       }
       else { //Starting this else one [else1]
 ?>
+</body>
+</html>
           <!-- From here all HTML coding can be done -->
           <html>
             <head>
@@ -31,6 +42,9 @@
                     echo "<br>";
                     echo "<a href='logout.php'> Log out </a>";
               ?>
+              <body>
+                
+              </body>
         </html>
 <?php
       }

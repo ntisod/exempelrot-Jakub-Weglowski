@@ -1,5 +1,6 @@
 <?php
-    session_start();
+session_start();
+
 ?>
 
 <html>
@@ -10,7 +11,11 @@
 </head>
 <?php
 define('BASEPATH', true); //access connection script if you omit this line file will be blank
-require('../Pform/db.php'); //require connection script
+require('Pform/db.php'); //require connection script
+$MIN = 60;
+$HOUR = 3600;
+$DAY = 86400;
+
 
 if(isset($_POST['submit'])){  
         // try {
@@ -58,7 +63,7 @@ if(isset($_POST['submit'])){
                $_SESSION['luser'] = $v1;
                $_SESSION['start'] = time(); // Taking now logged in time.
                // Ending a session in 1 minutes from the starting time.
-               $_SESSION['expire'] = $_SESSION['start'] + (1 * 60);
+               $_SESSION['expire'] = $_SESSION['start'] + (1 * $MIN);
                echo '<script>window.location.replace("index.php");</script>';
            } else {
                echo "Please enter the username or password again!";

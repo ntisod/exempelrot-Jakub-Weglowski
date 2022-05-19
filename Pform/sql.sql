@@ -1,5 +1,5 @@
 CREATE TABLE 'admin' (
-  'id' int(11) NOT NULL,
+  'ID' int(11) NOT NULL,
   'username' varchar(100) NOT NULL,
   'email' varchar(100) NOT NULL,
   'password' text NOT NULL,
